@@ -1,0 +1,37 @@
+.atinput{
+    float:right;
+
+}
+
+.widget .widget-inside .atfollowservice{
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.widget .widget-inside .atfollowservice img{
+    margin-left:5px;
+    margin-right:5px;
+    float:left;
+}
+
+.widget .widget-inside p.addthis_more_promo,
+.addthis_more_promo {
+    background: none repeat scroll 0 0 #FCF8E3;
+    line-height: 20px;
+    padding: 5px;
+}
+.follow-table td {
+    padding-top:6px;
+}
+.widget .widget-inside p {
+    margin: 0 0 0.4em;
+    padding: 0;
+}
+table.hwl td{
+    padding-right: 40px
+}
+.follow-table h5 {
+	font-size: 12px;
+	margin: 10px 0;
+}
