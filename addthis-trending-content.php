@@ -24,13 +24,15 @@
  * Plugin Name: AddThis Trending Content Widget
  * Plugin URI: http://www.addthis.com
  * Description: Boost page views by promoting top trending content from your blog or website. Please make sure that you have <a href="http://wordpress.org/extend/plugins/addthis/">AddThis Share Plugin</a> installed on your site.
- * Version: 1.0
+ * Version: 1.0.1
  *
  * Author: The AddThis Team
  * Author URI: http://www.addthis.com/blog
  */
 
 define('PLUGIN_DIR_PATH', plugin_dir_url(__FILE__) );
+define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wptcw-101' );
+define('ADDTHIS_TRENDING_AT_VERSION', 300 );
 
 class AddThisTrendingWidget {
 
@@ -40,7 +42,6 @@ class AddThisTrendingWidget {
         wp_enqueue_style('minicolor', PLUGIN_DIR_PATH . '/css/jquery.miniColors.css');
         add_action('admin_print_styles-widgets.php', array($this, 'admin_print_styles'));
         add_action( 'admin_enqueue_scripts', array($this, 'add_this_trending_admin_enqueue_scripts') );
-        wp_enqueue_script("jquery");
     }
 
     function widgets_init() {
@@ -640,6 +641,7 @@ class AddThisTrendingSidebarWidget extends WP_Widget {
 add_action('init', 'addthis_trending_early', 1);
 
 function addthis_trending_early() {
+	wp_enqueue_script("jquery");
     global $addthis_addjs;
     if (!isset($addthis_addjs)) {
         require('includes/addthis_addjs.php');
