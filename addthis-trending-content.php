@@ -24,14 +24,14 @@
  * Plugin Name: AddThis Trending Content Widget
  * Plugin URI: http://www.addthis.com
  * Description: Boost page views by promoting top trending content from your blog or website. Please make sure that you have <a href="http://wordpress.org/extend/plugins/addthis/">AddThis Share Plugin</a> installed on your site.
- * Version: 1.0.2
+ * Version: 1.0.3
  *
  * Author: The AddThis Team
  * Author URI: http://www.addthis.com/blog
  */
 
 define('PLUGIN_DIR_PATH', plugin_dir_url(__FILE__) );
-define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wptcw-102' );
+define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp' );
 define('ADDTHIS_TRENDING_AT_VERSION', 300 );
 
 class AddThisTrendingWidget {
