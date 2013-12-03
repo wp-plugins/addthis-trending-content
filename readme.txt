@@ -2,8 +2,8 @@
 Contributors: srijith.v, solchea, _mjk_
 Tags: trending, trending-content, addthis, social, widget, AddThis
 Requires at least: 2.9
-Tested up to: 3.5
-Stable tag: 1.0.1
+Tested up to: 3.7.1
+Stable tag: 1.0.3
 
 The AddThis Trending Content Widget boost page views by promoting top trending content from your blog or website. Please make sure that you have <a href="http://wordpress.org/extend/plugins/addthis/">AddThis Share Plugin</a> installed on your site.
 
@@ -58,6 +58,12 @@ Over 1,400,000 sites have installed AddThis. With over a billion unique users, A
 
 == Changelog ==
 
+= 1.0.3 =
+* Better functionality with other AddThis plugins
+
+= 1.0.2 =
+* Bug fixes
+
 = 1.0.1 =
 * Bug fixes
 
@@ -67,6 +73,12 @@ Over 1,400,000 sites have installed AddThis. With over a billion unique users, A
 
 
 == Upgrade Notice ==
+
+= 1.0.3 = 
+Better functionality with other AddThis plugins.
+
+= 1.0.2 = 
+Bug fixes.
 
 = 1.0.1 = 
 Bug fixes.
