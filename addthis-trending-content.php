@@ -31,7 +31,7 @@
  */
 
 define('PLUGIN_DIR_PATH', plugin_dir_url(__FILE__) );
-define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp' );
+define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp-1.0.4' );
 define('ADDTHIS_TRENDING_AT_VERSION', 300 );
 
 class AddThisTrendingWidget {
