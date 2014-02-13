@@ -24,14 +24,14 @@
  * Plugin Name: AddThis Trending Content Widget
  * Plugin URI: http://www.addthis.com
  * Description: Boost page views by promoting top trending content from your blog or website. Please make sure that you have <a href="http://wordpress.org/extend/plugins/addthis/">AddThis Share Plugin</a> installed on your site.
- * Version: 1.0.4
+ * Version: 1.0.5
  *
  * Author: The AddThis Team
  * Author URI: http://www.addthis.com/blog
  */
 
 define('PLUGIN_DIR_PATH', plugin_dir_url(__FILE__) );
-define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp-1.0.4' );
+define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp-1.0.5' );
 define('ADDTHIS_TRENDING_AT_VERSION', 300 );
 
 class AddThisTrendingWidget {
@@ -219,7 +219,7 @@ class AddThisTrendingPlugin {
             $border_disabled    =   ''; 
         }
         ?>
-        <?php if(!is_trending_pro_user()) { ?>
+        <?php if(!at_trending_content_is_pro_user()) { ?>
         <div class="updated addthis_setup_nag">
             <p>AddThis Pro now available - start your trial at 
                 <a href="http://www.addthis.com" target="_blank">www.addthis.com</a> 
@@ -663,12 +663,11 @@ function addthis_trending_early() {
 }
 
 // check for pro user
-function is_trending_pro_user() {
+function at_trending_content_is_pro_user() {
     $isPro = false;
     $options = get_option('addthis_settings');
     $profile = $options['profile'];
     if ($profile) {
-        $profile_code = str_replace('-', '', $profile);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "http://q.addthis.com/feeds/1.0/config.json?pubid=" . $profile);
 
