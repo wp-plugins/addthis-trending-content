@@ -24,14 +24,14 @@
  * Plugin Name: AddThis Trending Content Widget
  * Plugin URI: http://www.addthis.com
  * Description: Boost page views by promoting top trending content from your blog or website. Please make sure that you have <a href="http://wordpress.org/extend/plugins/addthis/">AddThis Share Plugin</a> installed on your site.
- * Version: 1.0.4
+ * Version: 1.0.5
  *
  * Author: The AddThis Team
  * Author URI: http://www.addthis.com/blog
  */
 
 define('PLUGIN_DIR_PATH', plugin_dir_url(__FILE__) );
-define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp' );
+define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp-1.0.5' );
 define('ADDTHIS_TRENDING_AT_VERSION', 300 );
 
 class AddThisTrendingWidget {
@@ -219,6 +219,7 @@ class AddThisTrendingPlugin {
             $border_disabled    =   ''; 
         }
         ?>
+        <?php if(!at_trending_content_is_pro_user()) { ?>
         <div class="updated addthis_setup_nag">
             <p>AddThis Pro now available - start your trial at 
                 <a href="http://www.addthis.com" target="_blank">www.addthis.com</a> 
@@ -226,6 +227,7 @@ class AddThisTrendingPlugin {
                 advanced customization options and priority support.
             </p>
         </div><br/>
+        <?php } ?>
         <?php echo $addthis_addjs->getAtPluginPromoText(); ?>
         <img alt='addthis' src="//cache.addthis.com/icons/v1/thumbs/32x32/more.png" class="header-img"/>
         <span class="addthis-title">AddThis</span> <span class="addthis-plugin-name">Trending</span>
@@ -658,4 +660,31 @@ function addthis_trending_early() {
         require('includes/addthis_addjs_extender.php');
         $addthis_addjs = new AddThis_addjs_extender($addthis_options);
     }
+}
+
+// check for pro user
+function at_trending_content_is_pro_user() {
+    $isPro = false;
+    $options = get_option('addthis_settings');
+    $profile = $options['profile'];
+    if ($profile) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "http://q.addthis.com/feeds/1.0/config.json?pubid=" . $profile);
+
+        // receive server response ...
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        // further processing ....
+        $server_output = curl_exec($ch);
+        curl_close($ch);
+        
+        $array = json_decode($server_output);
+        // check for pro user
+        if (array_key_exists('_default',$array)) {
+            $isPro = true;
+        } else {
+            $isPro = false;
+        }
+    }
+    return $isPro;
 }
