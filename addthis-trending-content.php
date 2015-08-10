@@ -2,7 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 /*
  * +--------------------------------------------------------------------------+
- * | Copyright (c) 2008-2012 Add This, LLC                                    |
+ * | Copyright (c) 2008-2015 Add This, LLC                                    |
  * +--------------------------------------------------------------------------+
  * | This program is free software; you can redistribute it and/or modify     |
  * | it under the terms of the GNU General Public License as published by     |
@@ -24,14 +24,14 @@
  * Plugin Name: AddThis Trending Content Widget
  * Plugin URI: http://www.addthis.com
  * Description: Boost page views by promoting top trending content from your blog or website. Please make sure that you have <a href="http://wordpress.org/extend/plugins/addthis/">AddThis Share Plugin</a> installed on your site.
- * Version: 1.0.5
+ * Version: 1.0.6
  *
  * Author: The AddThis Team
  * Author URI: http://www.addthis.com/blog
  */
 
 define('PLUGIN_DIR_PATH', plugin_dir_url(__FILE__) );
-define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wpp-1.0.5' );
+define('ADDTHIS_TRENDING_PRODUCT_CODE', 'wptcw-1.0.6' );
 define('ADDTHIS_TRENDING_AT_VERSION', 300 );
 
 class AddThisTrendingWidget {
@@ -389,14 +389,14 @@ function initialize_addthis_trending_plugin() {
 
 class AddThisTrendingSidebarWidget extends WP_Widget {
 
-    function AddThisTrendingSidebarWidget() {
+    function __construct() {
         $widget_ops = array('classname' => 'attrendingwidget', 'description' => 'Connect fans and trendingers with your profiles on top social services');
 
         /* Widget control settings. */
         $control_ops = array('width' => 260);
 
         /* Create the widget. */
-        $this->WP_Widget('addthis-trending-widget', 'AddThis Trending Content', $widget_ops, $control_ops);
+        parent::__construct('addthis-trending-widget', 'AddThis Trending Content', $widget_ops, $control_ops);
     }
 
     /**

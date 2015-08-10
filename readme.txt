@@ -1,9 +1,9 @@
 === AddThis Trending Content === 
-Contributors: srijith.v, solchea, _mjk_
+Contributors: abramsm, srijith.v, jgrodel, bradaddthiscom, addthis_paul, addthis_matt, ribin_addthis, addthis_elsa, AddThis_Mike
 Tags: trending, trending-content, addthis, social, widget, AddThis
 Requires at least: 2.9
-Tested up to: 3.8.1
-Stable tag: 1.0.5
+Tested up to: 4.3
+Stable tag: 1.0.6
 
 The AddThis Trending Content Widget boost page views by promoting top trending content from your blog or website. Please make sure that you have <a href="http://wordpress.org/extend/plugins/addthis/">AddThis Share Plugin</a> installed on your site.
 
@@ -54,9 +54,15 @@ All of the options required through this plugin require javascript.   JavaScript
 = Who else uses AddThis? =
 Over 1,400,000 sites have installed AddThis. With over a billion unique users, AddThis is helping publishers and brands all over the world, in more than sixty languages. You might be surprised who's using AddThis--<a href="http://www.addthis.com/features#partners">here are just a few</a>.
 
+== Screenshots ==
 
+1. Widget settings
+2. Top stories on page
 
 == Changelog ==
+
+= 1.0.6 =
+Support for WordPress 4.3
 
 = 1.0.5 =
 * Minor bug fix
@@ -79,6 +85,9 @@ Over 1,400,000 sites have installed AddThis. With over a billion unique users, A
 
 
 == Upgrade Notice ==
+
+= 1.0.6 = 
+Support for WordPress 4.3
 
 = 1.0.5 =
 Minor bug fix
